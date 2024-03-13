@@ -1,12 +1,13 @@
 const images = [
-    "merlin.JPG",
-    "terk.JPG",
-    "timothy.JPG",
-    "gimli.JPG",
-    "pinky.JPG",
+    ["https://i.ibb.co/XjMPcXn/Skollie-D-D-Feb-2023.jpg", "skollie"],
+    ["https://i.ibb.co/6b5bm5b/Zea-March-22-6.jpg", "zea"],
+    ["https://i.ibb.co/2t982vz/Chane-D-D-Jan-2023.jpg", "chane"],
+    ["https://i.ibb.co/3mrJJc9/Barney-background.jpg", "barney"],
+    ["https://i.ibb.co/k2dXqf6/Gavan-Goliath-Feb-2023.jpg", "gavan"],
 ];
-let newImage = "";
-let answer = "";
+let newImageArr = [];
+let newImageSrc = "";
+let newImageAns = "";
 let streak = 0;
 
 const btnNew = document.getElementById("btn-new");
@@ -16,12 +17,15 @@ const message = document.getElementById("message");
 const inputField = document.getElementById("input-field");
 
 function setNewImage() {
-    let prevImage = newImage;
-    newImage = `images/${images[Math.floor(Math.random() * images.length)]}`;
-    if (newImage === prevImage) {
+    let prevImageSrc = newImageSrc;
+    newImageArr = images[Math.floor(Math.random() * images.length)];
+    newImageSrc = newImageArr[0];
+    console.log(newImageSrc);
+
+    if (newImageSrc === prevImageSrc) {
         return setNewImage();
     } else {
-        document.getElementById("monkey-image").src = newImage;
+        document.getElementById("monkey-image").src = newImageSrc;
         document.getElementById("input-box").style.visibility = "visible";
         clear();
     }
@@ -29,7 +33,7 @@ function setNewImage() {
 
 function checkAnswer() {
     let input = inputField.value.toLowerCase();
-    answer = newImage.slice(7, -4);
+    answer = newImageArr[1];
     if (input === answer) {
         streak += 1;
         if (streak === 5) {
