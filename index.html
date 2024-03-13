@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@100;400;700&family=Berkshire+Swash&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Name the Monkey</title>
+    </head>
+    <body>
+        <div class="mx-auto text-center">
+            <h1 id="title">Name the Monkey!</h1>
+
+            <div>
+                <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    id="btn-new"
+                >
+                    Show New Monkey
+                </button>
+            </div>
+
+            <div>
+                <img id="monkey-image" src="" alt="" />
+            </div>
+
+            <div class="row" id="input-box">
+                <div class="input-group">
+                    <input
+                        id="input-field"
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter name..."
+                    />
+                    <button
+                        type="button"
+                        class="btn btn-outline-success"
+                        id="btn-enter"
+                    >
+                        Enter
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <h3 id="message"></h3>
+            </div>
+
+            <div id="reveal-answer">
+                <button id="btn-reveal-answer" class="btn btn-outline-dark">
+                    Reveal Answer
+                </button>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
