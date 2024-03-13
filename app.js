@@ -1,9 +1,14 @@
 const images = [
-    ["https://i.ibb.co/XjMPcXn/Skollie-D-D-Feb-2023.jpg", "skollie"],
-    ["https://i.ibb.co/6b5bm5b/Zea-March-22-6.jpg", "zea"],
-    ["https://i.ibb.co/2t982vz/Chane-D-D-Jan-2023.jpg", "chane"],
-    ["https://i.ibb.co/3mrJJc9/Barney-background.jpg", "barney"],
-    ["https://i.ibb.co/k2dXqf6/Gavan-Goliath-Feb-2023.jpg", "gavan"],
+    ["https://i.ibb.co/XjMPcXn/Skollie-D-D-Feb-2023.jpg", "skollie", "D&D"],
+    ["https://i.ibb.co/6b5bm5b/Zea-March-22-6.jpg", "zea", "Jalamango"],
+    ["https://i.ibb.co/2t982vz/Chane-D-D-Jan-2023.jpg", "chane", "D&D"],
+    ["https://i.ibb.co/3mrJJc9/Barney-background.jpg", "barney", "D&D"],
+    ["https://i.ibb.co/k2dXqf6/Gavan-Goliath-Feb-2023.jpg", "gavan", "Goliath"],
+    [
+        "https://i.ibb.co/r0sQXJK/Mango-Jalamango-May-2022.jpg",
+        "mango",
+        "Jalamango",
+    ],
 ];
 let newImageArr = [];
 let newImageSrc = "";
@@ -51,7 +56,9 @@ function checkAnswer() {
 }
 
 function revealAnswer() {
-    message.textContent = "The correct answer is " + answer.toUpperCase();
+    message.textContent = `It's ${answer.toUpperCase()} from ${
+        newImageArr[2]
+    }!!`;
     btnReveal.style.visibility = "hidden";
 }
 
