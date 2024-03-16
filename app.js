@@ -14,10 +14,12 @@ let newImageArr = [];
 let newImageSrc = "";
 let newImageAns = "";
 let streak = 0;
+let answer = "";
 
 const btnNew = document.getElementById("btn-new");
 const btnEnter = document.getElementById("btn-enter");
-const btnReveal = document.getElementById("btn-reveal-answer");
+const btnNext = document.getElementById("btn-next");
+const btnReveal = document.getElementById("btn-reveal");
 const message = document.getElementById("message");
 const messageTick = document.getElementById("message-tick");
 const messageX = document.getElementById("message-x");
@@ -38,6 +40,8 @@ function setNewImage() {
     }
 }
 
+setNewImage();
+
 function checkAnswer() {
     let input = inputField.value.toLowerCase();
     answer = newImageArr[1];
@@ -48,13 +52,13 @@ function checkAnswer() {
             messageX.style.display = "none";
             message.style.color = "#6efc16";
             message.textContent = "Correct! That's 5 in a row!!";
+            btnReveal.style.display = "none";
         } else {
             messageTick.style.display = "inline-block";
             messageX.style.display = "none";
             message.style.color = "#6efc16";
             message.textContent = "Correct!";
-            btnReveal.style.visibility = "hidden";
-            console.log(streak);
+            btnReveal.style.display = "none";
         }
     } else {
         streak = 0;
@@ -62,7 +66,7 @@ function checkAnswer() {
         messageX.style.display = "inline-block";
         message.style.color = "#eb655c";
         message.textContent = "Wrong! 🫢 Try again!";
-        btnReveal.style.visibility = "visible";
+        btnReveal.style.display = "inline-block";
     }
 }
 
@@ -72,15 +76,15 @@ function revealAnswer() {
         newImageArr[2]
     }!!`;
     messageX.style.display = "none";
-    btnReveal.style.visibility = "hidden";
+    btnReveal.style.display = "none";
 }
 
 function clear() {
     message.textContent = "";
     inputField.value = "";
-    btnReveal.style.visibility = "hidden";
     messageX.style.display = "none";
     messageTick.style.display = "none";
+    btnReveal.style.display = "none";
 }
 
 btnNew.addEventListener("click", setNewImage);
@@ -91,3 +95,4 @@ document.addEventListener("keypress", function (e) {
     }
 });
 btnReveal.addEventListener("click", revealAnswer);
+btnNext.addEventListener("click", setNewImage);
