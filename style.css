@@ -16,7 +16,7 @@ body {
     width: 100%;
     height: auto;
     max-width: 750px;
-    margin-top: 10px;
+    margin-top: 16px;
     margin-bottom: 30px;
     border-radius: 5px;
     box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
@@ -39,6 +39,7 @@ body {
 }
 
 #message-box {
+    height: 70px;
     display: inline-block;
     margin: 16px 0 16px 0;
     vertical-align: middle;
@@ -47,19 +48,33 @@ body {
 #message {
     font-size: 2rem;
     display: inline-block;
-    margin-left: 8px;
+    text-align: left;
+    margin-left: 16px;
     margin-bottom: 0;
-    padding-bottom: 6px;
+    padding-bottom: 0;
     vertical-align: middle;
     color: #6efc16;
     /* color: #eb655c; */
+}
+
+#message-main {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    display: block;
+    line-height: 32px;
+}
+
+#message-sub {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    display: block;
 }
 
 #message-tick {
     /* display: inline-block; */
     display: none;
     border-radius: 50%;
-    padding: 12px 12px 12px 12px;
+    padding: 14px 14px 14px 14px;
     color: #6efc16;
     background-color: #4a4a4a;
 }
@@ -68,7 +83,7 @@ body {
     /* display: inline-block; */
     display: none;
     border-radius: 50%;
-    padding: 12px 12px 12px 12px;
+    padding: 14px 14px 14px 14px;
     color: #eb655c;
     background-color: #4a4a4a;
 }
@@ -102,7 +117,7 @@ body {
     border: 1px solid #434343;
     color: rgb(163, 163, 163);
     vertical-align: middle;
-    padding: 2px 8px 2px 8px;
+    padding: 6px 8px 6px 8px;
     margin-top: 10px;
     display: inline-block;
 }
@@ -119,7 +134,7 @@ body {
 
 @media (min-width: 640px) {
     #monkey-image {
-        height: 40vh;
+        height: 50vh;
         width: auto;
     }
 
@@ -128,14 +143,16 @@ body {
     }
 
     #lower-buttons {
-        width: 400px;
+        width: 600px;
     }
 
     #btn-next-box {
-        margin-right: 0;
+        padding-right: 0;
+        padding-left: 36px;
     }
 
     #btn-reveal-box {
-        margin-left: 0;
+        padding-left: 0;
+        padding-right: 36px;
     }
 }
