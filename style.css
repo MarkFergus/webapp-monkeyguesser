@@ -1,6 +1,6 @@
 body {
     background-color: #1a282d;
-    font-family: "Roboto";
+    font-family: "Sansita";
     color: white;
 }
 
@@ -13,18 +13,42 @@ body {
 }
 
 #monkey-image {
-    height: auto;
     width: 100%;
+    height: auto;
     max-width: 750px;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-radius: 2px;
     box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 #message {
-    margin-top: 10px;
-    font-family: "Roboto";
+    margin-top: 8px;
+    color: #6efc16;
+    /* color: #eb655c; */
+}
+
+#message-box {
+    display: inline-block;
+    margin-top: 16px;
+}
+
+#message-tick {
+    /* display: inline-block; */
+    display: none;
+    border-radius: 50%;
+    padding: 16px 16px 16px 16px;
+    color: #6efc16;
+    background-color: #4a4a4a;
+}
+
+#message-x {
+    /* display: inline-block; */
+    display: none;
+    border-radius: 50%;
+    padding: 16px 16px 16px 16px;
+    color: #eb655c;
+    background-color: #4a4a4a;
 }
 
 #input-box {
@@ -43,16 +67,11 @@ body {
     width: auto;
 }
 
-@media (min-width: 640px) {
-    #input-box {
-        width: 350px;
-    }
-}
-
 #btn-new {
     background-color: #1a282d;
-    border: 1px solid #757474;
+    border: 1px solid #434343;
     color: #d3d3d3;
+    padding: 2px 8px 4px 8px;
 }
 
 #btn-new:hover {
@@ -62,7 +81,19 @@ body {
 
 #btn-reveal-answer {
     background-color: #1a282d;
-    border: 1px solid #757474;
+    border: 1px solid #434343;
     color: #d3d3d3;
+    padding: 2px 8px 4px 8px;
+    margin-top: 8px;
     visibility: hidden;
+}
+
+@media (min-width: 640px) {
+    #input-box {
+        width: 350px;
+    }
+    #monkey-image {
+        height: 40vh;
+        width: auto;
+    }
 }

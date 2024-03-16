@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@100;400;700&family=Berkshire+Swash&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@100;400;700&family=Berkshire+Swash&family=Sansita:wght@400;700&display=swap"
             rel="stylesheet"
         />
         <link
@@ -32,7 +32,7 @@
                 </button>
             </div>
 
-            <div>
+            <div id="image-box">
                 <img id="monkey-image" src="" alt="" />
             </div>
 
@@ -46,7 +46,7 @@
                     />
                     <button
                         type="button"
-                        class="btn btn-outline-success"
+                        class="btn btn-primary"
                         id="btn-enter"
                     >
                         Enter
@@ -54,7 +54,44 @@
                 </div>
             </div>
 
-            <div>
+            <div id="message-box">
+                <div id="message-x">
+                    <svg
+                        stroke-width="5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
+                    </svg>
+                </div>
+                <div id="message-tick">
+                    <svg
+                        stroke-width="5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-check"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                </div>
                 <h3 id="message"></h3>
             </div>
 

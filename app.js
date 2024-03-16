@@ -19,6 +19,8 @@ const btnNew = document.getElementById("btn-new");
 const btnEnter = document.getElementById("btn-enter");
 const btnReveal = document.getElementById("btn-reveal-answer");
 const message = document.getElementById("message");
+const messageTick = document.getElementById("message-tick");
+const messageX = document.getElementById("message-x");
 const inputField = document.getElementById("input-field");
 
 function setNewImage() {
@@ -42,23 +44,34 @@ function checkAnswer() {
     if (input === answer) {
         streak += 1;
         if (streak === 5) {
-            message.textContent = "Correct!! 😁 That's 5 in a row!!";
+            messageTick.style.display = "inline-block";
+            messageX.style.display = "none";
+            message.style.color = "#6efc16";
+            message.textContent = "Correct! That's 5 in a row!!";
         } else {
-            message.textContent = "Correct!! 😁";
+            messageTick.style.display = "inline-block";
+            messageX.style.display = "none";
+            message.style.color = "#6efc16";
+            message.textContent = "Correct!";
             btnReveal.style.visibility = "hidden";
             console.log(streak);
         }
     } else {
         streak = 0;
+        messageTick.style.display = "none";
+        messageX.style.display = "inline-block";
+        message.style.color = "#eb655c";
         message.textContent = "Wrong! 🫢 Try again!";
         btnReveal.style.visibility = "visible";
     }
 }
 
 function revealAnswer() {
+    message.style.color = "white";
     message.textContent = `It's ${answer.toUpperCase()} from ${
         newImageArr[2]
     }!!`;
+    messageX.style.display = "none";
     btnReveal.style.visibility = "hidden";
 }
 
@@ -66,6 +79,8 @@ function clear() {
     message.textContent = "";
     inputField.value = "";
     btnReveal.style.visibility = "hidden";
+    messageX.style.display = "none";
+    messageTick.style.display = "none";
 }
 
 btnNew.addEventListener("click", setNewImage);
