@@ -73,6 +73,7 @@ function checkAnswer() {
 
 function revealAnswer() {
     message.style.color = "white";
+    answer = newImageArr[1];
     messageMain.textContent = `It's ${answer.toUpperCase()} from ${
         newImageArr[2]
     }!`;
