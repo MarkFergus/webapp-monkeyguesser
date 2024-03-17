@@ -16,10 +16,7 @@ const images = [
     ["https://i.ibb.co/GsmknC9/anita-skunkey-mar2024.jpg", "anita", "Skunkey"],
     ["https://i.ibb.co/pfrhLmj/elora-skunkey-mar2024.jpg", "elora", "Skunkey"],
 ];
-let newImageArr = [];
-let newImageSrc = "";
-let newImageAns = "";
-let answer = "";
+let newImageArr, newImageSrc, newImageAns, answer;
 
 const btnNew = document.getElementById("btn-new");
 const btnEnter = document.getElementById("btn-enter");
@@ -36,7 +33,6 @@ function setNewImage() {
     let prevImageSrc = newImageSrc;
     newImageArr = images[Math.floor(Math.random() * images.length)];
     newImageSrc = newImageArr[0];
-    console.log(newImageSrc);
     if (newImageSrc === prevImageSrc) {
         return setNewImage();
     } else {
