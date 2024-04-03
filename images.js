@@ -1,4 +1,4 @@
-const images = [
+var images = [
     ["https://i.ibb.co/LZpkzY0/yoda-koko-feb2024.jpg", "yoda", "Koko"],
     ["https://i.ibb.co/D4ms2xj/timmy-gismo-jan2024.jpg", "timmy", "Gismo"],
     ["https://i.ibb.co/QQj3cFz/riccardo-koko-feb2024.jpg", "riccardo", "Koko"],
@@ -24,5 +24,3 @@ const images = [
     ["https://i.ibb.co/w783yG9/tufty-hb-feb2024-min.jpg", "tufty", "H&B"],
     ["https://i.ibb.co/L1MzR76/Wanda-hb-mar2024-min.jpg", "wanda", "H&B"],
 ];
-
-export { images };

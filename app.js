@@ -1,5 +1,3 @@
-import { images } from "/images.js";
-
 const btnNew = document.getElementById("btn-new");
 const btnEnter = document.getElementById("btn-enter");
 const btnNext = document.getElementById("btn-next");
