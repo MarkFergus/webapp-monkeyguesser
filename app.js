@@ -75,6 +75,7 @@ function clear() {
     btnReveal.disabled = false;
 }
 
+// to fix bug where animation does not restart
 function resetAnimation() {
     messageX.animation = "none";
     messageX.offsetHeight;
