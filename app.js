@@ -1,23 +1,4 @@
-const images = [
-    [
-        "https://i.ibb.co/r0sQXJK/Mango-Jalamango-May-2022.jpg",
-        "mango",
-        "Jalamango",
-    ],
-    ["https://i.ibb.co/LZpkzY0/yoda-koko-feb2024.jpg", "yoda", "Koko"],
-    ["https://i.ibb.co/D4ms2xj/timmy-gismo-jan2024.jpg", "timmy", "Gismo"],
-    ["https://i.ibb.co/QQj3cFz/riccardo-koko-feb2024.jpg", "riccardo", "Koko"],
-    ["https://i.ibb.co/YQCGFDL/atlas-koko-feb2024.jpg", "atlas", "Koko"],
-    ["https://i.ibb.co/s2ryW2X/darby-james-feb2024.jpg", "darby", "James"],
-    ["https://i.ibb.co/swBPQ7M/tk-skunkey-mar2024.jpg", "tk", "Skunkey"],
-    ["https://i.ibb.co/7pb5GyK/samber-koko-mar2024.jpg", "samber", "Koko"],
-    ["https://i.ibb.co/0y283ZQ/kathleen-h-B-mar2024.jpg", "kathleen", "H&B"],
-    ["https://i.ibb.co/30x9pZf/June-Global-16-03-2024-3.jpg", "june", "Global"],
-    ["https://i.ibb.co/GsmknC9/anita-skunkey-mar2024.jpg", "anita", "Skunkey"],
-    ["https://i.ibb.co/pfrhLmj/elora-skunkey-mar2024.jpg", "elora", "Skunkey"],
-];
-
-let newImageArr, newImageSrc, answer;
+import { images } from "/images.js";
 
 const btnNew = document.getElementById("btn-new");
 const btnEnter = document.getElementById("btn-enter");
@@ -29,6 +10,8 @@ const messageSub = document.getElementById("message-sub");
 const messageTick = document.getElementById("message-tick");
 const messageX = document.getElementById("message-x");
 const inputField = document.getElementById("input-field");
+
+let newImageArr, newImageSrc, answer;
 
 function setNewImage() {
     let prevImageSrc = newImageSrc;
