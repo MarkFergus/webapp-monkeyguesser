@@ -32,28 +32,31 @@ setNewImage();
 function checkAnswer() {
     let input = inputField.value.toLowerCase();
     answer = newImageArr[1];
+    clear();
     if (input === answer) {
         messageTick.style.display = "inline-block";
         messageX.style.display = "none";
         message.style.color = "#6efc16";
         messageMain.textContent = "Correct!";
-        messageSub.textContent = `${answer.toUpperCase()} from ${
-            newImageArr[2]
-        }!`;
+        messageSub.textContent = `${answer.toUpperCase()} from ${newImageArr[2]}!`;
         btnReveal.disabled = true;
     } else {
+        resetAnimation();
         messageTick.style.display = "none";
         messageX.style.display = "inline-block";
         message.style.color = "#eb655c";
         messageMain.textContent = "Wrong!";
         messageSub.textContent = "Try again!";
         btnReveal.disabled = false;
+        messageX.classList.add("shake");
     }
+    
 }
 
 function revealAnswer() {
     message.style.color = "white";
     answer = newImageArr[1];
+    message.style.color = "#0d6efd";
     messageMain.textContent = `It's ${answer.toUpperCase()} from ${
         newImageArr[2]
     }!`;
@@ -72,7 +75,13 @@ function clear() {
     btnReveal.disabled = false;
 }
 
-btnNew.addEventListener("click", setNewImage);
+function resetAnimation() {
+    messageX.animation = "none";
+    messageX.offsetHeight;
+    messageX.animation = null;
+}
+
+// btnNew.addEventListener("click", setNewImage);
 btnEnter.addEventListener("click", checkAnswer);
 document.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
