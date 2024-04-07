@@ -1,5 +1,6 @@
 const btnNew = document.getElementById("btn-new");
 const btnEnter = document.getElementById("btn-enter");
+const btnNewGame= document.getElementById("btn-newgame-box");
 const btnNext = document.getElementById("btn-next");
 const btnReveal = document.getElementById("btn-reveal");
 const message = document.getElementById("message");
@@ -32,7 +33,12 @@ function setNewImage() {
         btnReveal.style.display = "inline-block";
         clear();
     } else {
-        alert('No more monkeys, please refresh to start again');
+        messageX.style.display = "none";
+        messageTick.style.display = "none";
+        message.style.color = "white";
+        messageMain.textContent = "";
+        messageSub.textContent = "!! No images remaining !!";
+        btnNewGame.style.visibility= "visible";
     }
 }
 
@@ -76,6 +82,7 @@ function revealAnswer() {
 }
 
 function clear() {
+    btnNewGame.style.visibility= "hidden";
     messageMain.textContent = "";
     messageSub.textContent = "";
     inputField.value = "";
@@ -92,6 +99,11 @@ function resetAnimation() {
 }
 
 btnEnter.addEventListener("click", checkAnswer);
+btnNewGame.addEventListener("click", () => {
+    console.log('new game pressed');
+    monkeys = images;
+    setNewImage();
+});
 document.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
         checkAnswer();

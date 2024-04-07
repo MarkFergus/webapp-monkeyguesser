@@ -133,25 +133,34 @@ body {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-#btn-new {
-    background-color: #1a282d;
-    border: 1px solid #00557d;
-    color: #0085c2;
-    vertical-align: middle;
-    padding: 2px 8px 4px 8px;
-    margin-top: 10px;
-    display: none;
-}
-
-#btn-new:hover {
-    border: 1px solid #8cd2f3;
-    color: #7ed2f9;
-    border: 1px solid white;
-}
-
 #btn-enter {
     padding-left: 24px;
     padding-right: 24px;
+}
+
+#btn-newgame-box {
+    margin: 0 auto 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#btn-newgame {
+    width: 100%;
+    background-color: rgb(204, 203, 203);
+    border: 1px solid #434343;
+    color: #1a282d;
+    vertical-align: middle;
+    padding: 6px 8px 6px 8px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#btn-newgame:hover {
+    background-color: rgb(235, 234, 234);
+    border: 1px solid #434343;
+    color: #1a282d;
 }
 
 #lower-buttons {
@@ -190,6 +199,10 @@ body {
 
     #input-box {
         width: 350px;
+    }
+
+    #btn-newgame-box {
+        width: 200px;
     }
 
     #lower-buttons {
