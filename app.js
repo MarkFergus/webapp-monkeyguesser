@@ -9,34 +9,48 @@ const messageTick = document.getElementById("message-tick");
 const messageX = document.getElementById("message-x");
 const inputField = document.getElementById("input-field");
 
-let newImageArr, newImageSrc, answer;
+let newImageArr, newImageSrc, answer, monkeyName, monkeyTroop;
+let monkeys = images;
+
+setNewImage();
 
 function setNewImage() {
-    let prevImageSrc = newImageSrc;
-    newImageArr = images[Math.floor(Math.random() * images.length)];
-    newImageSrc = newImageArr[0];
-    if (newImageSrc === prevImageSrc) {
-        return setNewImage();
-    } else {
+    if (monkeys.length > 0) {
+        // get a random index from monkeys array
+        randIdx = Number([Math.floor(Math.random() * monkeys.length)]);
+        monkey = monkeys[randIdx];
+        // set monkey details according to new index
+        newImageSrc = monkey[0];
+        monkeyName = monkey[1];
+        monkeyTroop = monkey[2];
+        // remove monkey from monkeys array
+        monkeys = removeMonkey(monkeys, randIdx);
+        console.log(monkeys);
+        // set new image 
         document.getElementById("monkey-image").src = newImageSrc;
         document.getElementById("input-box").style.visibility = "visible";
         btnReveal.style.display = "inline-block";
         clear();
+    } else {
+        alert('No more monkeys, please refresh to start again');
     }
 }
 
-setNewImage();
+function removeMonkey(arr, i) {
+    let start = arr.slice(0, i);
+    let end = arr.slice(i + 1);
+    return [...start, ...end];
+}
 
 function checkAnswer() {
     let input = inputField.value.toLowerCase();
-    answer = newImageArr[1];
     clear();
-    if (input === answer) {
+    if (input === monkeyName) {
         messageTick.style.display = "inline-block";
         messageX.style.display = "none";
         message.style.color = "#6efc16";
         messageMain.textContent = "Correct!";
-        messageSub.textContent = `${answer.toUpperCase()} from ${newImageArr[2]}!`;
+        messageSub.textContent = `${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
         btnReveal.disabled = true;
     } else {
         resetAnimation();
@@ -53,11 +67,8 @@ function checkAnswer() {
 
 function revealAnswer() {
     message.style.color = "white";
-    answer = newImageArr[1];
     message.style.color = "#0d6efd";
-    messageMain.textContent = `It's ${answer.toUpperCase()} from ${
-        newImageArr[2]
-    }!`;
+    messageMain.textContent = `It's ${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
     messageSub.textContent = "";
     messageX.style.display = "none";
     messageTick.style.display = "none";
@@ -73,14 +84,13 @@ function clear() {
     btnReveal.disabled = false;
 }
 
-// to fix bug where animation does not restart
+// bug fix where animation does not restart
 function resetAnimation() {
     messageX.animation = "none";
     messageX.offsetHeight;
     messageX.animation = null;
 }
 
-// btnNew.addEventListener("click", setNewImage);
 btnEnter.addEventListener("click", checkAnswer);
 document.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
