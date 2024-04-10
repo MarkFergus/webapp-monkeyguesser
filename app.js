@@ -27,7 +27,6 @@ function setRandomImage() {
     let randIdx = Number([Math.floor(Math.random() * monkeys.length)]);
     monkey = monkeys[randIdx];
     monkeyImage.src = monkey[0];
-    //set props for use in checkAnswer & revealAnswer
     monkeyName = monkey[1];
     monkeyTroop = monkey[2];
     monkeys = removeItemFromArr(monkeys, randIdx);
@@ -72,7 +71,6 @@ function displayEndMsg() {
     messageX.style.display = "none";
     messageTick.style.display = "none";
     message.style.color = "white";
-    // message.style.textAlign = "middle";
     messageMain.textContent = "The End!";
     messageSub.textContent = "Go on, have another go...";
     btnNewGame.style.visibility= "visible";
@@ -99,7 +97,7 @@ function clear() {
     btnReveal.disabled = false;
 }
 
-// bug fix where animation does not restart
+// bug fix to allow animation to restart
 function resetAnimation() {
     messageX.animation = "none";
     messageTick.animation = "none";
