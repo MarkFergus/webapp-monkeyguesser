@@ -36,8 +36,9 @@ function setNewImage() {
         messageX.style.display = "none";
         messageTick.style.display = "none";
         message.style.color = "white";
-        messageMain.textContent = "";
-        messageSub.textContent = "!! No images remaining !!";
+        // message.style.textAlign = "middle";
+        messageMain.textContent = "The End!";
+        messageSub.textContent = "Go on, have another go...";
         btnNewGame.style.visibility= "visible";
     }
 }
@@ -51,6 +52,7 @@ function removeMonkey(arr, i) {
 function checkAnswer() {
     let input = inputField.value.toLowerCase();
     clear();
+    resetAnimation();
     if (input === monkeyName) {
         messageTick.style.display = "inline-block";
         messageX.style.display = "none";
@@ -59,7 +61,6 @@ function checkAnswer() {
         messageSub.textContent = `${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
         btnReveal.disabled = true;
     } else {
-        resetAnimation();
         messageTick.style.display = "none";
         messageX.style.display = "inline-block";
         message.style.color = "#eb655c";
@@ -94,8 +95,11 @@ function clear() {
 // bug fix where animation does not restart
 function resetAnimation() {
     messageX.animation = "none";
+    messageTick.animation = "none";
     messageX.offsetHeight;
+    messageTick.offsetHeight;
     messageX.animation = null;
+    messageTick.animation = null;
 }
 
 btnEnter.addEventListener("click", checkAnswer);
