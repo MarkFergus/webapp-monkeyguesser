@@ -78,7 +78,6 @@ function displayEndMsg() {
 
 function revealAnswer() {
     message.style.color = "white";
-    message.style.color = "#0d6efd";
     messageMain.textContent = `It's ${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
     messageSub.textContent = "";
     messageX.style.display = "none";
