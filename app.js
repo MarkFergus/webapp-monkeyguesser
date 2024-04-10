@@ -1,16 +1,15 @@
 const monkeyImage = document.getElementById("monkey-image");
 const inputBox = document.getElementById("input-box");
-const btnNew = document.getElementById("btn-new");
+const inputField = document.getElementById("input-field");
 const btnEnter = document.getElementById("btn-enter");
 const btnNewGame= document.getElementById("btn-newgame-box");
-const btnNext = document.getElementById("btn-next");
 const btnReveal = document.getElementById("btn-reveal");
+const btnNext = document.getElementById("btn-next");
 const message = document.getElementById("message");
 const messageMain = document.getElementById("message-main");
 const messageSub = document.getElementById("message-sub");
 const messageTick = document.getElementById("message-tick");
 const messageX = document.getElementById("message-x");
-const inputField = document.getElementById("input-field");
 
 let newImageArr, newImageSrc, answer, monkeyName, monkeyTroop;
 let monkeys = images;
