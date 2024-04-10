@@ -185,7 +185,8 @@ body {
 #btn-next,
 #btn-reveal {
     width: 100%;
-    background-color: #1a282d;
+    height: 2.5rem;
+    background-color: #273b43;
     border: 1px solid #434343;
     color: rgb(163, 163, 163);
     vertical-align: middle;
