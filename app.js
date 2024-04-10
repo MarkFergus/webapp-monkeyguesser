@@ -1,3 +1,5 @@
+const monkeyImage = document.getElementById("monkey-image");
+const inputBox = document.getElementById("input-box");
 const btnNew = document.getElementById("btn-new");
 const btnEnter = document.getElementById("btn-enter");
 const btnNewGame= document.getElementById("btn-newgame-box");
@@ -13,64 +15,69 @@ const inputField = document.getElementById("input-field");
 let newImageArr, newImageSrc, answer, monkeyName, monkeyTroop;
 let monkeys = images;
 
-setNewImage();
+setRandomImage();
 
-function setNewImage() {
-    if (monkeys.length > 0) {
-        // get a random index from monkeys array
-        randIdx = Number([Math.floor(Math.random() * monkeys.length)]);
-        monkey = monkeys[randIdx];
-        // set monkey details according to new index
-        newImageSrc = monkey[0];
-        monkeyName = monkey[1];
-        monkeyTroop = monkey[2];
-        // remove monkey from monkeys array
-        monkeys = removeMonkey(monkeys, randIdx);
-        console.log(monkeys);
-        // set new image 
-        document.getElementById("monkey-image").src = newImageSrc;
-        document.getElementById("input-box").style.visibility = "visible";
-        btnReveal.style.display = "inline-block";
-        clear();
-    } else {
-        messageX.style.display = "none";
-        messageTick.style.display = "none";
-        message.style.color = "white";
-        // message.style.textAlign = "middle";
-        messageMain.textContent = "The End!";
-        messageSub.textContent = "Go on, have another go...";
-        btnNewGame.style.visibility= "visible";
-    }
+function checkForImages() {
+    monkeys.length > 0
+        ? setRandomImage()
+        : displayEndMsg()
 }
 
-function removeMonkey(arr, i) {
+function setRandomImage() {
+    let randIdx = Number([Math.floor(Math.random() * monkeys.length)]);
+    monkey = monkeys[randIdx];
+    monkeyImage.src = monkey[0];
+    //set props for use in checkAnswer & revealAnswer
+    monkeyName = monkey[1];
+    monkeyTroop = monkey[2];
+    monkeys = removeItemFromArr(monkeys, randIdx);
+    btnReveal.style.display = "inline-block";
+    clear();
+}
+
+function removeItemFromArr(arr, i) {
     let start = arr.slice(0, i);
     let end = arr.slice(i + 1);
     return [...start, ...end];
 }
 
 function checkAnswer() {
-    let input = inputField.value.toLowerCase();
+    let userInput = inputField.value.toLowerCase();
     clear();
     resetAnimation();
-    if (input === monkeyName) {
-        messageTick.style.display = "inline-block";
-        messageX.style.display = "none";
-        message.style.color = "#6efc16";
-        messageMain.textContent = "Correct!";
-        messageSub.textContent = `${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
-        btnReveal.disabled = true;
-    } else {
-        messageTick.style.display = "none";
-        messageX.style.display = "inline-block";
-        message.style.color = "#eb655c";
-        messageMain.textContent = "Wrong!";
-        messageSub.textContent = "Try again!";
-        btnReveal.disabled = false;
-        messageX.classList.add("shake");
-    }
-    
+    userInput === monkeyName 
+        ? displayCorrectMsg()
+        : displayWrongMsg()
 }
+
+function displayCorrectMsg() {
+    messageTick.style.display = "inline-block";
+    messageX.style.display = "none";
+    message.style.color = "#6efc16";
+    messageMain.textContent = "Correct!";
+    messageSub.textContent = `${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
+    btnReveal.disabled = true;
+}
+
+function displayWrongMsg() {
+    messageTick.style.display = "none";
+    messageX.style.display = "inline-block";
+    message.style.color = "#eb655c";
+    messageMain.textContent = "Wrong!";
+    messageSub.textContent = "Try again!";
+    btnReveal.disabled = false;
+}
+
+function displayEndMsg() {
+    messageX.style.display = "none";
+    messageTick.style.display = "none";
+    message.style.color = "white";
+    // message.style.textAlign = "middle";
+    messageMain.textContent = "The End!";
+    messageSub.textContent = "Go on, have another go...";
+    btnNewGame.style.visibility= "visible";
+}
+
 
 function revealAnswer() {
     message.style.color = "white";
@@ -114,4 +121,4 @@ document.addEventListener("keypress", function (e) {
     }
 });
 btnReveal.addEventListener("click", revealAnswer);
-btnNext.addEventListener("click", setNewImage);
+btnNext.addEventListener("click", checkForImages);
