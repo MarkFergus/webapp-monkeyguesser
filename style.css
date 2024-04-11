@@ -207,7 +207,6 @@ body {
 @media (min-width: 640px) {
     .main-nav {
         justify-content: center;
-        
     }
 
     .main-nav__title {

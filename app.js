@@ -73,6 +73,7 @@ function displayEndMsg() {
     messageMain.textContent = "The End!";
     messageSub.textContent = "Go on, have another go...";
     btnNewGame.style.visibility= "visible";
+    btnReveal.disabled = true;
 }
 
 
@@ -107,9 +108,8 @@ function resetAnimation() {
 
 btnEnter.addEventListener("click", checkAnswer);
 btnNewGame.addEventListener("click", () => {
-    console.log('new game pressed');
     monkeys = images;
-    setNewImage();
+    setRandomImage();
 });
 document.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
