@@ -1,8 +1,8 @@
 var images = [
-    ["https://i.ibb.co/LZpkzY0/yoda-koko-feb2024.jpg", "yoda", "Koko"],
-    ["https://i.ibb.co/D4ms2xj/timmy-gismo-jan2024.jpg", "timmy", "Gismo"],
-    ["https://i.ibb.co/QQj3cFz/riccardo-koko-feb2024.jpg", "riccardo", "Koko"],
-    ["https://i.ibb.co/YQCGFDL/atlas-koko-feb2024.jpg", "atlas", "Koko"],
+    ["https://i.ibb.co/LZpkzY0/yoda-koko-feb2024.jpg", "yoda", "Koko", "babies"],
+    ["https://i.ibb.co/D4ms2xj/timmy-gismo-jan2024.jpg", "timmy", "Gismo", "babies"],
+    ["https://i.ibb.co/QQj3cFz/riccardo-koko-feb2024.jpg", "riccardo", "Koko", "babies"],
+    ["https://i.ibb.co/YQCGFDL/atlas-koko-feb2024.jpg", "atlas", "Koko", "gismo"],
     ["https://i.ibb.co/s2ryW2X/darby-james-feb2024.jpg", "darby", "James"],
     ["https://i.ibb.co/swBPQ7M/tk-skunkey-mar2024.jpg", "tk", "Skunkey"],
     ["https://i.ibb.co/7pb5GyK/samber-koko-mar2024.jpg", "samber", "Koko"],

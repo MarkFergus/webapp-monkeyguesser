@@ -1,8 +1,13 @@
+const content = document.getElementById("main-content");
+const modal = document.getElementById('myModal');
+const btnLogo = document.getElementById("main_nav__logo");
 const monkeyImage = document.getElementById("monkey-image");
 const inputBox = document.getElementById("input-box");
 const inputField = document.getElementById("input-field");
+const btnModalStart = document.getElementById("btn-modal-start");
 const btnEnter = document.getElementById("btn-enter");
 const btnNewGame= document.getElementById("btn-newgame-box");
+const btnNewGame1= document.getElementById("btn-newgame1");
 const btnReveal = document.getElementById("btn-reveal");
 const btnNext = document.getElementById("btn-next");
 const message = document.getElementById("message");
@@ -10,11 +15,28 @@ const messageMain = document.getElementById("message-main");
 const messageSub = document.getElementById("message-sub");
 const messageTick = document.getElementById("message-tick");
 const messageX = document.getElementById("message-x");
+const modalForm = document.getElementById("modal-form");
 
-let newImageArr, newImageSrc, answer, monkeyName, monkeyTroop;
+let newImageArr, newImageSrc, answer, monkeyName, monkeyTroop
 let monkeys = images;
+let checkedValues = [];
 
 setRandomImage();
+
+
+function startNewGame() {
+    monkeys = images;
+    modal.style.visibility = "hidden";
+    filterArr();
+    setRandomImage();
+}
+
+function filterArr() { 
+    console.log('Filtering monkeys...');
+    const filteredArray = monkeys.filter(subArray => subArray.some(val => checkedValues.includes(val)));
+    monkeys = filteredArray;
+    console.log(`There are ${monkeys.length} monkeys to guess`);
+}
 
 function checkForImages() {
     monkeys.length > 0
@@ -72,10 +94,8 @@ function displayEndMsg() {
     message.style.color = "white";
     messageMain.textContent = "The End!";
     messageSub.textContent = "Go on, have another go...";
-    btnNewGame.style.visibility= "visible";
     btnReveal.disabled = true;
 }
-
 
 function revealAnswer() {
     message.style.color = "white";
@@ -87,7 +107,6 @@ function revealAnswer() {
 }
 
 function clear() {
-    btnNewGame.style.visibility= "hidden";
     messageMain.textContent = "";
     messageSub.textContent = "";
     inputField.value = "";
@@ -106,15 +125,40 @@ function resetAnimation() {
     messageTick.animation = null;
 }
 
+function checkFormSelections() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            checkedValues.push(checkbox.name);
+        }
+    });
+    console.log(checkedValues);
+}
+
+function openModal() {
+    modal.style.visibility = "visible";
+}
+
+btnNewGame.addEventListener("click", openModal);
+btnNext.addEventListener("click", checkForImages);
 btnEnter.addEventListener("click", checkAnswer);
-btnNewGame.addEventListener("click", () => {
-    monkeys = images;
-    setRandomImage();
-});
-document.addEventListener("keypress", function (e) {
+document.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         checkAnswer();
     }
 });
 btnReveal.addEventListener("click", revealAnswer);
-btnNext.addEventListener("click", checkForImages);
+
+// Close the modal when clicking outside of it
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.visibility = 'hidden'; // Back to invisible
+    }
+});
+//prevent default page reload and obtain modal selection
+modalForm.addEventListener('submit', (event) => {
+    checkedValues = [];
+    event.preventDefault(); 
+    checkFormSelections();
+    startNewGame();
+});

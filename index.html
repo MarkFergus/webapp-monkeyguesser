@@ -23,11 +23,42 @@
     <body>
         <nav class="main-nav">
             <div class="main-nav__items">
-                <div class="main_nav__logo"><img src="logo_inv-transparent.png" alt="app logo"></div>
+                <div id="main_nav__logo" class="main_nav__logo">
+                    <img src="logo_inv-transparent.png" alt="app logo">
+                </div>
                 <h5 class="main-nav__title">Monkey Guesser!</h5>
             </div>
         </nav>
-        <div class="mx-auto text-center">
+
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <h2>New Game</h2>
+                <h5>Please select which monkeys to include</h5>
+                <form id="modal-form" class="modal-form">
+                    <div class="modal-form-inputgroup">
+                        <input type="checkbox" id="babies-selector" name="babies">
+                        <label for="babies">Babies 2023/24</label>
+                    </div>
+                    <div class="modal-form-inputgroup">
+                        <input type="checkbox" id="gismo-selector" name="gismo">
+                        <label for="gismo">Gismo Troop</label>
+                    </div>
+                    <input id="btn-modal-start" class="form-btn" type="submit" value="Start!">
+                </form>
+            </div>
+        </div>
+
+        <div id="btn-newgame-box">
+            <button
+                type="button"
+                id="btn-newgame"
+                class="btn btn-outline-light"
+                >
+                New Game
+            </button>
+        </div>
+
+        <div id="main-content" class="mx-auto text-center">
 
             <div id="image-box">
                 <img id="monkey-image" src="" alt="" />
@@ -93,16 +124,6 @@
                     <p id="message-main"></p>
                     <p id="message-sub"></p>
                 </div>
-            </div>
-
-            <div id="btn-newgame-box" class="col-8">
-                <button
-                    type="button"
-                    id="btn-newgame"
-                    class="btn btn-outline-light"
-                    >
-                    New Game
-                </button>
             </div>
 
             <div id="lower-buttons" class="row justify-content-between">
