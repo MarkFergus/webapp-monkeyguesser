@@ -2,7 +2,10 @@ body {
     background-color: #1a282d;
     font-family: "Sansita";
     color: white;
+    text-align: center;
 }
+
+/**** NAV BAR STYLES ****/
 
 .main-nav {
     height: 3rem;
@@ -36,6 +39,36 @@ body {
     color: white;
     display: none;
 }
+
+#btn-enter {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+#btn-newgame-box {
+    margin: 2rem auto 0 auto;
+    /* justify-content: center;
+    align-items: center; */
+} 
+
+/**** NEW GAME BUTTON STYLES ****/
+
+#btn-newgame {
+    width: 40%;
+    height: 2.5rem;
+    background-color: #314a54;
+    border: 1px solid #434343;
+    color: rgb(192, 192, 192);
+    padding: 6px 8px 6px 8px;
+}
+
+#btn-newgame:hover {
+    background-color: rgb(235, 234, 234);
+    border: 1px solid #434343;
+    color: #1a282d;
+}
+
+/**** NEW GAME MODAL STYLES ****/
 
 .modal {
     display: flex;
@@ -122,6 +155,8 @@ body {
     align-self: center;
 }
 
+/**** IMAGE STYLES ****/
+
 #monkey-image {
     width: 100%;
     height: auto;
@@ -131,6 +166,8 @@ body {
     border-radius: 5px;
     box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
+
+/**** INPUT BOX STYLES ****/
 
 #input-box {
     margin-left: auto;
@@ -151,6 +188,8 @@ body {
     background-color: rgb(235, 235, 235);
 }
 
+/**** STATBOX STYLES ****/
+
 .statbox {
     margin-top: 0.5rem;
     display: flex;
@@ -163,6 +202,8 @@ body {
     font-size: 1.3rem;
     margin-bottom: 0;
 }
+
+/**** MESSAGE BOX STYLES ****/
 
 #message-box {
     height: 70px;
@@ -241,32 +282,9 @@ body {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-#btn-enter {
-    padding-left: 24px;
-    padding-right: 24px;
-}
 
-#btn-newgame-box {
-    margin: 2rem auto 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-#btn-newgame {
-    width: 40%;
-    height: 2.5rem;
-    background-color: #273b43;
-    border: 1px solid #434343;
-    color: rgb(163, 163, 163);
-    padding: 6px 8px 6px 8px;
-}
-
-#btn-newgame:hover {
-    background-color: rgb(235, 234, 234);
-    border: 1px solid #434343;
-    color: #1a282d;
-}
+/**** LOWER BUTTONS STYLES ****/
 
 #lower-buttons {
     border-top: 1px solid #4a4a4a;
@@ -278,9 +296,9 @@ body {
 #btn-reveal {
     width: 100%;
     height: 2.5rem;
-    background-color: #273b43;
+    background-color: #314a54;
     border: 1px solid #434343;
-    color: rgb(163, 163, 163);
+    color: rgb(192, 192, 192);
     vertical-align: middle;
     padding: 6px 8px 6px 8px;
     margin-top: 10px;
