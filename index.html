@@ -21,114 +21,112 @@
         <title>VMF Monkey Guesser</title>
     </head>
     <body>
-        <nav class="main-nav">
-            <div class="main-nav__items">
-                <div id="main_nav__logo" class="main_nav__logo">
-                    <img src="logo_inv-transparent.png" alt="app logo">
+        <div class="header-content">
+            <nav class="main-nav">
+                <div class="main-nav__items">
+                    <div id="main_nav__logo" class="main_nav__logo">
+                        <img src="logo_inv-transparent.png" alt="app logo">
+                    </div>
+                    <h5 class="main-nav__title">Monkey Guesser!</h5>
                 </div>
-                <h5 class="main-nav__title">Monkey Guesser!</h5>
+            </nav>
+            <div class="modal" id="myModal">
+                <div class="modal-content">
+                    <h2>New Game</h2>
+                    <h5>Please select which monkeys to include</h5>
+                    <form id="modal-form" class="modal-form">
+                        <div class="modal-form-inputgroup">
+                            <input type="checkbox" id="babies-selector" name="babies" required>
+                            <label for="babies">Babies 2023/24</label>
+                        </div>
+                        <p>More coming soon...</p>
+                        <!-- <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
+                            <label for="gismo">Gismo Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
+                            <label for="royal">Royal Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">D&D Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
+                            <label for="gismo">Goliath Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
+                            <label for="royal">Engeltjie Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">SAAV Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">D&D Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
+                            <label for="gismo">Goliath Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
+                            <label for="royal">Engeltjie Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">SAAV Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
+                            <label for="gismo">Koko Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
+                            <label for="royal">Global Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">James Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">Skrow Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
+                            <label for="gismo">Robert Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
+                            <label for="royal">Skunkey Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">H&B Troop <span>(Coming Soon)</span></label>
+                        </div>
+                        <div class="modal-form-inputgroup disabled">
+                            <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
+                            <label for="d&d">Jalamango Troop <span>(Coming Soon)</span></label>
+                        </div> -->
+                        <input id="btn-modal-start" class="form-btn" type="submit" value="Start!">
+                    </form>
+                </div>
             </div>
-        </nav>
-
-        <div class="modal" id="myModal">
-            <div class="modal-content">
-                <h2>New Game</h2>
-                <h5>Please select which monkeys to include</h5>
-                <form id="modal-form" class="modal-form">
-                    <div class="modal-form-inputgroup">
-                        <input type="checkbox" id="babies-selector" name="babies" required>
-                        <label for="babies">Babies 2023/24</label>
-                    </div>
-                    <p>More coming soon...</p>
-                    <!-- <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
-                        <label for="gismo">Gismo Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
-                        <label for="royal">Royal Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">D&D Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
-                        <label for="gismo">Goliath Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
-                        <label for="royal">Engeltjie Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">SAAV Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">D&D Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
-                        <label for="gismo">Goliath Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
-                        <label for="royal">Engeltjie Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">SAAV Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
-                        <label for="gismo">Koko Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
-                        <label for="royal">Global Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">James Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">Skrow Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="gismo-selector" name="gismo" disabled="disabled">
-                        <label for="gismo">Robert Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="royal-selector" name="royal" disabled="disabled">
-                        <label for="royal">Skunkey Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">H&B Troop <span>(Coming Soon)</span></label>
-                    </div>
-                    <div class="modal-form-inputgroup disabled">
-                        <input type="checkbox" id="d&d-selector" name="d&d" disabled="disabled">
-                        <label for="d&d">Jalamango Troop <span>(Coming Soon)</span></label>
-                    </div> -->
-                    <input id="btn-modal-start" class="form-btn" type="submit" value="Start!">
-                </form>
+            <div id="btn-newgame-box">
+                <button
+                    type="button"
+                    id="btn-newgame"
+                    class="btn btn-outline-light"
+                    >
+                    New Game
+                </button>
             </div>
         </div>
-
-        <div id="btn-newgame-box">
-            <button
-                type="button"
-                id="btn-newgame"
-                class="btn btn-outline-light"
-                >
-                New Game
-            </button>
-        </div>
-
         <div id="main-content" class="mx-auto text-center">
-
             <div class="upper-game-card">
                 <div id="image-box">
                     <img id="monkey-image" src="" alt="" />
@@ -227,7 +225,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
         
         <script src="images.js"></script>
