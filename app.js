@@ -4,6 +4,8 @@ const btnLogo = document.getElementById("main_nav__logo");
 const monkeyImage = document.getElementById("monkey-image");
 const inputBox = document.getElementById("input-box");
 const inputField = document.getElementById("input-field");
+const score = document.getElementById("score");
+const remainingImgs = document.getElementById("remainingImgs");
 const btnModalStart = document.getElementById("btn-modal-start");
 const btnEnter = document.getElementById("btn-enter");
 const btnNewGame= document.getElementById("btn-newgame-box");
@@ -17,16 +19,22 @@ const messageTick = document.getElementById("message-tick");
 const messageX = document.getElementById("message-x");
 const modalForm = document.getElementById("modal-form");
 
-let newImageArr, newImageSrc, answer, monkeyName, monkeyTroop
+let newImageArr, newImageSrc, answer, monkeyName, monkeyTroop, currScore = 0;
 let monkeys = images;
 let checkedValues = [];
 
-setRandomImage();
+init();
 
+function init() {
+    content.style.visibility = "hidden";
+}
 
 function startNewGame() {
-    monkeys = images;
+    content.style.visibility = "visible";
     modal.style.visibility = "hidden";
+    remainingImgs.textContent = monkeys.length;
+    monkeys = images;
+    score.textContent = 0;
     filterArr();
     setRandomImage();
 }
@@ -52,7 +60,14 @@ function setRandomImage() {
     monkeyTroop = monkey[2];
     monkeys = removeItemFromArr(monkeys, randIdx);
     btnReveal.style.display = "inline-block";
+    btnReveal.disabled = true;
+    updateStats();
     clear();
+}
+
+function updateStats() {
+    score.textContent = currScore;
+    remainingImgs.textContent = monkeys.length;
 }
 
 function removeItemFromArr(arr, i) {
@@ -77,6 +92,10 @@ function displayCorrectMsg() {
     messageMain.textContent = "Correct!";
     messageSub.textContent = `${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
     btnReveal.disabled = true;
+    btnEnter.disabled = true;
+    currScore = (currScore+1);
+    console.log(currScore);
+    updateStats();
 }
 
 function displayWrongMsg() {
@@ -84,8 +103,11 @@ function displayWrongMsg() {
     messageX.style.display = "inline-block";
     message.style.color = "#eb655c";
     messageMain.textContent = "Wrong!";
-    messageSub.textContent = "Try again!";
+    messageSub.textContent = `It's ${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
     btnReveal.disabled = false;
+    btnEnter.disabled = true;
+    currScore = (currScore-1);
+    updateStats();
 }
 
 function displayEndMsg() {
@@ -93,8 +115,10 @@ function displayEndMsg() {
     messageTick.style.display = "none";
     message.style.color = "white";
     messageMain.textContent = "The End!";
-    messageSub.textContent = "Go on, have another go...";
+    messageSub.textContent = `You scored ${currScore} !!`
     btnReveal.disabled = true;
+    btnNext.disabled = true;
+    btnEnter.disabled = true;
 }
 
 function revealAnswer() {
@@ -103,7 +127,8 @@ function revealAnswer() {
     messageSub.textContent = "";
     messageX.style.display = "none";
     messageTick.style.display = "none";
-    btnReveal.disabled = false;
+    // btnReveal.disabled = false;
+    btnEnter.disabled = true;
 }
 
 function clear() {
@@ -113,6 +138,7 @@ function clear() {
     messageX.style.display = "none";
     messageTick.style.display = "none";
     btnReveal.disabled = false;
+    btnEnter.disabled = false;
 }
 
 // bug fix to allow animation to restart
@@ -132,7 +158,6 @@ function checkFormSelections() {
             checkedValues.push(checkbox.name);
         }
     });
-    console.log(checkedValues);
 }
 
 function openModal() {
@@ -142,11 +167,11 @@ function openModal() {
 btnNewGame.addEventListener("click", openModal);
 btnNext.addEventListener("click", checkForImages);
 btnEnter.addEventListener("click", checkAnswer);
-document.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        checkAnswer();
-    }
-});
+// document.addEventListener("keypress", (e) => {
+//     if (e.key === "Enter") {
+//         checkAnswer();
+//     }
+// });
 btnReveal.addEventListener("click", revealAnswer);
 
 // Close the modal when clicking outside of it
