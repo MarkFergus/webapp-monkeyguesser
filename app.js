@@ -24,10 +24,10 @@ let monkeys = images;
 let checkedValues = [];
 
 init();
-btnReveal.disabled = true;
 
 function init() {
     content.style.visibility = "hidden";
+    btnReveal.disabled = true;
 }
 
 function startNewGame() {
@@ -137,7 +137,7 @@ function clear() {
     inputField.value = "";
     messageX.style.display = "none";
     messageTick.style.display = "none";
-    btnReveal.disabled = false;
+    // btnReveal.disabled = false;
     btnEnter.disabled = false;
 }
 
