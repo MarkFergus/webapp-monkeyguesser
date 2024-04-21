@@ -60,7 +60,6 @@ function setRandomImage() {
     monkeyName = monkey[1];
     monkeyTroop = monkey[2];
     monkeys = removeItemFromArr(monkeys, randIdx);
-    btnReveal.style.display = "inline-block";
     // btnReveal.disabled = true;
     updateStats();
     clear();

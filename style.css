@@ -132,14 +132,6 @@ body {
     box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.statbox {
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: end;
-    color: #6efc16;
-}
-
 #input-box {
     margin-left: auto;
     margin-right: auto;
@@ -159,10 +151,23 @@ body {
     background-color: rgb(235, 235, 235);
 }
 
+.statbox {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    color: #5998f6;
+}
+
+.statbox p {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
 #message-box {
     height: 70px;
     display: inline-block;
-    margin: 16px 0 16px 0;
+    margin: 24px 0 24px 0;
     vertical-align: middle;
 }
 
