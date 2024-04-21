@@ -23,4 +23,25 @@ var images = [
     ["https://i.ibb.co/Hz9z6WC/rowan-goliath-mar2024-min.jpg", "rowan", "Goliath", "babies"],
     ["https://i.ibb.co/w783yG9/tufty-hb-feb2024-min.jpg", "tufty", "H&B", "babies"],
     ["https://i.ibb.co/L1MzR76/Wanda-hb-mar2024-min.jpg", "wanda", "H&B", "babies"],
+    ["https://i.ibb.co/s1zM2FL/yoda-koko-feb2024-2.jpg", "yoda", "Koko", "babies"],
+    ["https://i.ibb.co/JFD3PyW/anita-skunkey-mar2024-2.jpg", "anita", "Skunkey", "babies"],
+    ["https://i.ibb.co/9WyVQMq/atlas-koko-feb2024.jpg", "atlas", "Koko", "babies"],
+    ["https://i.ibb.co/JCCYGjL/darby-james-feb2024-2.jpg", "darby", "James", "babies"],
+    ["https://i.ibb.co/C130wG9/elora-skunkey-mar2024-2.jpg", "elora", "Skunkey", "babies"],
+    ["https://i.ibb.co/hyRQNQ2/fritzi-engeltjie-mar204-2.jpg", "fritzi", "Engeltjie", "babies"],
+    ["https://i.ibb.co/PrqtB6n/harold-dd-apr2024.jpg", "harold", "D&D", "babies"],
+    ["https://i.ibb.co/7jcS8Fp/june-global-mar2024-2.jpg", "june", "Global", "babies"],
+    ["https://i.ibb.co/XZXhgdQ/kathleen-hb-mar2024-2.jpg", "kathleen", "H&B", "babies"],
+    ["https://i.ibb.co/vzbDSLK/nugget-goliath-mar2024-2.jpg", "nugget", "Goliath", "babies"],
+    ["https://i.ibb.co/d26Jdcb/paulie-hb-mar2024-2.jpg", "paulie", "H&B", "babies"],
+    ["https://i.ibb.co/hX8Zs3c/riccardo-koko-mar2024.jpg", "riccardo", "Koko", "babies"],
+    ["https://i.ibb.co/25VVcxf/rowan2-goliath-mar2024-2.jpg", "rowan", "Goliath", "babies"],
+    ["https://i.ibb.co/XzFp2rv/samber-koko-feb2024.jpg", "samber", "Koko", "babies"],
+    ["https://i.ibb.co/6X3NDQk/timmy-gismo-mar2024.jpg", "timmy", "Gismo", "babies"],
+    ["https://i.ibb.co/2YGMWQ4/tk-skunkey-mar2024-2.jpg", "tk", "Skunkey", "babies"],
+    ["https://i.ibb.co/DwBJF7S/tufty-hb-apr2024.jpg", "tufty", "H&B", "babies"],
 ];
+
+
+
+
