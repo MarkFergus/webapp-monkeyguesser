@@ -24,6 +24,7 @@ let monkeys = images;
 let checkedValues = [];
 
 init();
+btnReveal.disabled = true;
 
 function init() {
     content.style.visibility = "hidden";
@@ -60,7 +61,7 @@ function setRandomImage() {
     monkeyTroop = monkey[2];
     monkeys = removeItemFromArr(monkeys, randIdx);
     btnReveal.style.display = "inline-block";
-    btnReveal.disabled = true;
+    // btnReveal.disabled = true;
     updateStats();
     clear();
 }
@@ -91,7 +92,7 @@ function displayCorrectMsg() {
     message.style.color = "#6efc16";
     messageMain.textContent = "Correct!";
     messageSub.textContent = `${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
-    btnReveal.disabled = true;
+    // btnReveal.disabled = true;
     btnEnter.disabled = true;
     currScore = (currScore+1);
     console.log(currScore);
@@ -104,7 +105,7 @@ function displayWrongMsg() {
     message.style.color = "#eb655c";
     messageMain.textContent = "Wrong!";
     messageSub.textContent = `It's ${monkeyName.toUpperCase()} from ${monkeyTroop}!`;
-    btnReveal.disabled = false;
+    // btnReveal.disabled = false;
     btnEnter.disabled = true;
     currScore = (currScore-1);
     updateStats();
@@ -116,7 +117,7 @@ function displayEndMsg() {
     message.style.color = "white";
     messageMain.textContent = "The End!";
     messageSub.textContent = `You scored ${currScore} !!`
-    btnReveal.disabled = true;
+    // btnReveal.disabled = true;
     btnNext.disabled = true;
     btnEnter.disabled = true;
 }
