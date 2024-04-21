@@ -129,101 +129,105 @@
 
         <div id="main-content" class="mx-auto text-center">
 
-            <div id="image-box">
-                <img id="monkey-image" src="" alt="" />
-            </div>
-
-            <div class="row" id="input-box">
-                <div class="input-group">
-                    <input
-                        id="input-field"
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter name..."
-                    />
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="btn-enter"
-                    >
-                        Enter
-                    </button>
+            <div class="upper-game-card">
+                <div id="image-box">
+                    <img id="monkey-image" src="" alt="" />
                 </div>
-            </div>
 
-            <div class="statbox">
-                <p class="statbox-score">
-                    Score: <span id="score"></span>
-                </p>
-                <p class="statbox-remainingImgs">
-                    Images Remaining: <span id="remainingImgs"></span>
-                </p>
-            </div>
-
-            <div id="message-box">
-                <div id="message-x">
-                    <svg
-                        stroke-width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-                    >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M18 6l-12 12" />
-                        <path d="M6 6l12 12" />
-                    </svg>
-                </div>
-                <div id="message-tick">
-                    <svg
-                        stroke-width="5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-check"
-                    >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l5 5l10 -10" />
-                    </svg>
-                </div>
-                <div id="message">
-                    <p id="message-main"></p>
-                    <p id="message-sub"></p>
-                </div>
-            </div>
-
-            <div id="lower-buttons" class="row justify-content-between">
-                <div id="btn-reveal-box" class="col-6">
-                    <button
-                        type="button"
-                        id="btn-reveal"
-                        class="btn btn-outline-dark"
+                <div id="input-box">
+                    <div class="input-group">
+                        <input
+                            id="input-field"
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter name..."
+                        />
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="btn-enter"
                         >
-                        Reveal Answer
-                    </button>
+                            Enter
+                        </button>
+                    </div>
                 </div>
-                <div id="btn-next-box" class="col-6">
-                    <button
-                        type="button"
-                        class="btn btn-outline-primary"
-                        id="btn-next"
+
+                <div class="statbox">
+                    <p class="statbox-score">
+                        Score: <span id="score"></span>
+                    </p>
+                    <p class="statbox-remainingImgs">
+                        Images Remaining: <span id="remainingImgs"></span>
+                    </p>
+                </div>
+
+                <div id="message-box">
+                    <div id="message-x">
+                        <svg
+                            stroke-width="5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-x"
                         >
-                        Next Monkey
-                    </button>
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M18 6l-12 12" />
+                            <path d="M6 6l12 12" />
+                        </svg>
+                    </div>
+                    <div id="message-tick">
+                        <svg
+                            stroke-width="5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-check"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l5 5l10 -10" />
+                        </svg>
+                    </div>
+                    <div id="message">
+                        <p id="message-main"></p>
+                        <p id="message-sub"></p>
+                    </div>
                 </div>
             </div>
+            <div class="lower-game-card">
+                <div id="lower-buttons">
+                    <div id="btn-reveal-box">
+                        <button
+                            type="button"
+                            id="btn-reveal"
+                            class="btn btn-outline-dark"
+                            >
+                            Reveal Answer
+                        </button>
+                    </div>
+                    <div id="btn-next-box" class="col-6">
+                        <button
+                            type="button"
+                            class="btn btn-outline-primary"
+                            id="btn-next"
+                            >
+                            Next Monkey
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         
         <script src="images.js"></script>
