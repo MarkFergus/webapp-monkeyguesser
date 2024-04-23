@@ -211,7 +211,7 @@ body {
 #message-box {
     height: 70px;
     display: inline-block;
-    margin: 32px 0 0 0;
+    margin: 1.6rem 0;
     vertical-align: middle;
 }
 
@@ -289,6 +289,8 @@ body {
 
 .lower-game-card {
     width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid #4a4a4a;
 }
 
 #lower-buttons {
@@ -298,8 +300,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 8px;
-    border-top: 1px solid #4a4a4a;
+    
 }
 
 #btn-next-box,
