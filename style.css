@@ -323,33 +323,17 @@ body {
 }
 
 @media (min-width: 640px) {
-    .main-nav {
-        justify-content: center;
-    }
-
-    .main-nav__title {
-        display: inline-block;
-    }
-
     #monkey-image {
-        height: 50vh;
-        width: auto;
+        height: auto;
+        width: 550px;
     }
 
     #input-box {
-        width: 350px;
-    }
-
-    #btn-newgame-box {
-        width: 200px;
-    }
-
-    #btn-newgame {
-        width: 100%;
+        width: 550px;
     }
 
     #lower-buttons {
-        width: 600px;
+        width: 550px;
     }
 
     #btn-next-box {
@@ -360,5 +344,11 @@ body {
     #btn-reveal-box {
         padding-left: 0;
         padding-right: 36px;
+    }
+}
+
+@media (max-width: 500px) {
+    #main-nav__title {
+        display: none;
     }
 }
