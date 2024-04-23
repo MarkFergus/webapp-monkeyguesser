@@ -77,7 +77,7 @@ function removeItemFromArr(arr, i) {
 }
 
 function checkAnswer() {
-    let userInput = inputField.value.toLowerCase();
+    let userInput = inputField.value.toLowerCase().trimEnd();
     clear();
     resetAnimation();
     userInput === monkeyName 
