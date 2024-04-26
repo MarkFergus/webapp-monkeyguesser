@@ -41,10 +41,8 @@ function startNewGame() {
 }
 
 function filterArr() { 
-    console.log('Filtering monkeys...');
     const filteredArray = monkeys.filter(subArray => subArray.some(val => checkedValues.includes(val)));
     monkeys = filteredArray;
-    console.log(`There are ${monkeys.length} monkeys to guess`);
 }
 
 function checkForImages() {
@@ -94,7 +92,6 @@ function displayCorrectMsg() {
     // btnReveal.disabled = true;
     btnEnter.disabled = true;
     currScore = (currScore+1);
-    console.log(currScore);
     updateStats();
 }
 
