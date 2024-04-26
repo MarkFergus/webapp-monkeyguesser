@@ -180,10 +180,22 @@ modal.addEventListener('click', (event) => {
         modal.style.visibility = 'hidden'; // Back to invisible
     }
 });
-//prevent default page reload and obtain modal selection
+//prevent default page reload, ensure one selection is made, and obtain selection array
 modalForm.addEventListener('submit', (event) => {
-    checkedValues = [];
-    event.preventDefault(); 
-    checkFormSelections();
-    startNewGame();
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let atLeastOneChecked = false;
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            atLeastOneChecked = true
+        }
+    });
+    if (!atLeastOneChecked) {
+        event.preventDefault();
+        alert('Please select at least one checkbox.');
+    } else {
+        checkedValues = [];
+        event.preventDefault(); 
+        checkFormSelections();
+        startNewGame();
+    }
 });
